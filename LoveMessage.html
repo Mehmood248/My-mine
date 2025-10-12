@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Love Message ❤️</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        text-align: center;
+      }
+      h1 {
+        font-size: 2em;
+        color: #ff3366;
+      }
+      p {
+        font-size: 1.1em;
+        max-width: 600px;
+        margin: 10px auto;
+        line-height: 1.6;
+      }
+      .hearts span {
+        position: fixed;
+        bottom: 0;
+        font-size: 20px;
+        animation: rise 6s linear infinite;
+        opacity: 0.8;
+      }
+      @keyframes rise {
+        0% {transform: translateY(0); opacity: 1;}
+        100% {transform: translateY(-800px); opacity: 0;}
+      }
+      audio {
+        display: none; /* hide player */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>For My Maa ❤️</h1>
+    <p>
+      Hi Maa ❤️,<br /><br />
+      You know, no matter how many things go wrong around me, one thought that never fades is you maa 🌸. Tuu meri smile yee 😊, mera peace yee 🕊️, mera saab kuch maa 💖. Jab bhi muje aafat ya tension hoti hai 😔, tera bas ek naam “maa” 💫... voo hi muje har problem se ladne ki himmat deta hai 💪🌼.<br /><br />
+      Tu meri duniya hai maa 🌍💗. Tu sirf meri love nahi — meri peace 🕊️, meri chaos 💥, meri laughter 😄, mera calm 🌼, mera sab kuch 💖.
+    </p>
+
+    <!-- Hidden autoplay audio -->
+    <audio id="bg-music" autoplay loop>
+      <source src="ReelAudio-35115.mp3" type="audio/mpeg" />
+    </audio>
+
+    <div class="hearts" id="hearts"></div>
+
+    <script>
+      const hearts = document.getElementById('hearts');
+      setInterval(() => {
+        const heart = document.createElement('span');
+        heart.textContent = '❤️';
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+        heart.style.animationDuration = Math.random() * 3 + 3 + 's';
+        hearts.appendChild(heart);
+        setTimeout(() => heart.remove(), 6000);
+      }, 300);
+    </script>
+  </body>
+</html>
